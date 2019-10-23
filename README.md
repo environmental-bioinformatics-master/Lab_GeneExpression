@@ -4,8 +4,10 @@ First, hop onto Poseidon and open a new tmux session:\
 `tmux new -s diffex`
 
 Navigate into your user folder for the class, and pull the "Lab_GeneExpression" Git repository:\
-`git clone ????`
-`cd Lab_GeneExpression`
+```
+git clone ????
+cd Lab_GeneExpression
+```
 
 Request some interactive space on the HPC:\
 `srun -p compute --time=01:00:00 --ntasks-per-node=1 --mem=10gb --pty bash` 
@@ -46,7 +48,9 @@ Now, you should be able to install DESeq2 via the Bioconductor package you just 
 
 *These installation instructions are clearly given on the Bioconductor page for DESeq2: https://bioconductor.org/packages/release/bioc/html/DESeq2.html*
 
-There is a lot in DESeq2, so this will take a while and involve a lot of text.
+There is a lot in DESeq2, so this will take a while and involve a lot of text. Check in on it once in a while - you may be asked if you want to update old packages; if so, type `a` to indicate that you would like to update all of them.
+
+
 
 
 
