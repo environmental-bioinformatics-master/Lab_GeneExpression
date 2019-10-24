@@ -3,11 +3,7 @@
 First, hop onto Poseidon and open a new tmux session:\
 `tmux new -s diffex`
 
-Navigate into your user folder for the class, and pull the "Lab_GeneExpression" Git repository:\
-```
-git clone https://github.com/environmental-bioinformatics-master/Lab_GeneExpression.git
-cd Lab_GeneExpression
-```
+Navigate into your user folder for the class, and make a new directory called `diffex` to play in for this lab. You don't need to copy anything from git - we will get a publicly-available example data set through R.
 
 Request some interactive space on the HPC:\
 `srun -p compute --time=01:00:00 --ntasks-per-node=1 --mem=10gb --pty bash` 
@@ -61,10 +57,3 @@ dev.off()
 ```
 
 IMPORTANT NOTE: Do NOT directly enter any R commands that output figures on Poseidon. Always redirect the output to a file, as we are doing with a pdf here. By default, R prints to screen...and  the HPC doesn’t have a screen. (It will not print to your local computer, since it’s not running locally.) If you do directly enter a command that outputs a figure, you will get nothing more than a sad, empty file named `Rplots.pdf`. If you're using a more complex command with multiple outputs, there are ways to get around this issue, but for now, please just redirect anything you want to look at to pdf.
-
-
-
-
-
-
-
