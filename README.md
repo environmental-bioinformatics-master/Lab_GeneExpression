@@ -5,7 +5,7 @@ First, hop onto Poseidon and open a new tmux session:\
 
 Navigate into your user folder for the class, and pull the "Lab_GeneExpression" Git repository:\
 ```
-git clone ????
+git clone https://github.com/environmental-bioinformatics-master/Lab_GeneExpression.git
 cd Lab_GeneExpression
 ```
 
