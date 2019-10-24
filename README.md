@@ -20,9 +20,7 @@ conda activate diffex
 conda install -c r r
 ```
 
-This will install R in a conda environment. Nearly all gene expression analysis programs work in R, a higher-level coding language that is particularly good for statistics, data management, and plotting.
-
-Much like python, a lot of the good stuff in R is done through "add-on" modules for more specialized tasks. In R, these are called packages.
+This will install R in a conda environment. Nearly all gene expression analysis programs work in R, a higher-level coding language that is particularly good for statistics, data management, and plotting. Much like python, a lot of the good stuff in R is done through "add-on" modules for more specialized tasks. In R, these are called packages.
 
 *BONUS R factoid for baseball lovers: you can install the entire Sean Lahman Baseball Database in R if you want to try your hand at sabermetrics. The package is called `Lahman`, and it contains statistics from 1871-present.*
 
@@ -51,7 +49,8 @@ library(DESeq2)
 library(pasilla)
 ```
 
-Now, we'll follow along with the DESeq2 vignette available online.
+Now, we'll follow along with the DESeq2 vignette available online here:\
+http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html
 
 If you want to make any figures, you can save them to pdf this way:
 
