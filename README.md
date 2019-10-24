@@ -29,6 +29,7 @@ Much like python, a lot of the good stuff in R is done through "add-on" modules 
 First, we need to install some packages we'll want to work with: `DESeq2` (which is used for differential expression), and `pasilla`, which contains an example gene expression data set. You can install R packages in conda, which we'll do here for simplicity. However, there's a more standard approach to installing R packages using the R `install.packages()` command. This approach is outlined briefly in the `r_install-packages.md` file in this repo.
 
 Install `DESeq2` and `pasilla` through conda:
+
 ```
 conda install -c conda-forge r-matrix
 conda install -c bioconda bioconductor-deseq2
@@ -43,13 +44,17 @@ Open `R` interactively by typing:\
 Your prompt should change to a greater-than sign:\
 `>`
 
-Once packages are installed, you need to load them in your environment (or script) in order to use them. R packages are loaded with this syntax: `library(PACKAGE_NAME)`. Like so many things in UNIX, package names are case-sensitive. Now, load the DESeq2 library that you previously installed:\
-`library(DESeq2)`
-`library(pasilla)`
+Once packages are installed, you need to load them in your environment (or script) in order to use them. R packages are loaded with this syntax: `library(PACKAGE_NAME)`. Like so many things in UNIX, package names are case-sensitive. Now, load the DESeq2 library that you previously installed:
+
+```
+library(DESeq2)
+library(pasilla)
+```
 
 Now, we'll follow along with the DESeq2 vignette available online.
 
-If you want to make any figures, you can save them to pdf this way:\
+If you want to make any figures, you can save them to pdf this way:
+
 ```
 pdf(file = "FILENAME.pdf")
 COMMAND THAT MAKES THE FIGURE
