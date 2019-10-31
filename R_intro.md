@@ -1,9 +1,21 @@
 # Intro to data manipulation & plotting in R
 
+If you want to work in a conda environmen on Posiedon, create the environment and install the following packages:
+```
+conda create --name r_demo
+conda activate r_demo
+conda install -c r r=3.6.0
+conda install -c r r-data.table=1.12.2
+conda install -c r r-ggplot2=3.1.1
+conda install -c r r-lahman=6.0_0
+```
+Note: We are specifying that we want the most recent versions of each package - this should help avoid some of the installation issues we've had in class.
+
 After installing, load libraries:
 
 ```
 library(data.table)
+setDTthreads(1)
 library(ggplot2)
 library(Lahman)
 ```
