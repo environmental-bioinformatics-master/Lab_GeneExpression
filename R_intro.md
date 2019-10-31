@@ -11,7 +11,11 @@ conda install -c r r-lahman=6.0_0
 ```
 Note: We are specifying that we want the most recent versions of each package - this should help avoid some of the installation issues we've had in class.
 
-After installing, load libraries:
+After installing, request some interactive time:
+`srun -p compute --time=01:00:00 --ntasks-per-node=1 --mem=5gb --pty bash`
+`conda activate r_demo`
+
+Enter `R` interactively, and load libraries:
 
 ```
 library(data.table)
@@ -55,7 +59,7 @@ Or, can chain subset conditions / commands\
 Sort the data by team\
 `bat[order(teamID)]`
 
-Sort the data by games AND team
+Sort the data by games AND team\
 `bat[order(G,yearID)]`
 
 Sum hits and at-bats by league and year\
@@ -75,10 +79,27 @@ ggplot2 resources:
 *  Extensive documentation: ggplot2.tidyverse.org/reference/
 *  Visual overview of some plot types: r-graph-gallery.com/portfolio/ggplot2-package
 
+Before we plot, we need to do a little extra setup because we're on the HPC:\
+`pdf(file = "baseball_test.pdf")`
+
 Let's plot! League average versus year\
 `ggplot(batSum, aes(x = yearID, y = lgAve)) + geom_point()`
 
-`Color-code leagues for easier viewing\
+Let's close the pdf so we can look at our plot:\
+`dev.off()`
+
+Now, let's set up a Jupyter notebook to view the plot pdf. Open a new terminal window / tab in Poseidon, navigate to your working directory, and get set up:
+```
+tmux new -s r_dem
+module load anaconda
+jupyter notebook --no-browser --port=8888
+```
+In a new window on your **local** computer, open up the jupyter connection:\
+`ssh -N -f -L localhost:8888:localhost:8888 USERNAME@poseidon-[l1 or l2].whoi.edu`
+
+Now, open up a browser window and enter `localhost:8888`. You should be able to open & view all pdfs in the directory.
+
+Color-code leagues for easier viewing\
 `ggplot(batSum, aes(x = yearID, y = lgAve, color = lgID)) + geom_point()`
 
 Gap in American League - this is because Designated Hitter rule was in force between 1973-1995 (interleague play)\
