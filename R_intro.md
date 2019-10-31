@@ -1,13 +1,21 @@
 # Intro to data manipulation & plotting in R
 
+After installing, load libraries:
+
 ```
 library(data.table)
 library(ggplot2)
 library(Lahman)
 ```
 
+# data.table: github.com/Rdatatable/data.table/wiki\
+*  Data wrangling
+*  Extension of data.frame
+*  Can easily subset and operate on data in rows and columns, and perform operations by group(s)
+*  Alternative to dplyr – use whatever works for you
+
 Easy, "smart" loading of data files\
-Don't need to specify delimiter, column classes, etc - fread will work it out\ 
+Don't need to specify delimiter, column classes, etc - fread will work it out\
 `YOUR_DAT = fread("FILE_PATH")`
 
 Put Lahman table into data.table form\
@@ -41,8 +49,21 @@ Sort the data by games AND team
 Sum hits and at-bats by league and year\
 `batSum = bat[, .(N = .N, at_bats = sum(AB), hits = sum(H)), by = .(yearID, lgID)]`
 
-Calculate league-wide batting average`
+Calculate league-wide batting average\
 `batSum$lgAve = batSum$hits/batSum$at_bats`
+
+# ggplot2: gg = “grammar of graphics”\
+*  `aes()` - aesthetics (what variables you are plotting – x, y, etc)
+*  `geom_` - geometries (how you are plotting them – scatter, line, histogram, etc)
+*  `theme()` - basic appearance tweaks (font type, size, tick marks, legend control, etc)
+*  ...and much, much more
+
+ggplot2 resources:\
+*  Main page: ggplot2.tidyverse.org
+*  Extensive documentation: ggplot2.tidyverse.org/reference/
+*  Visual overview of some plot types: r-graph-gallery.com/portfolio/ggplot2-package
+
+Hadley Wickham, master of the tidyverse
 
 Let's plot! League average versus year\
 `ggplot(batSum, aes(x = yearID, y = lgAve)) + geom_point()`
