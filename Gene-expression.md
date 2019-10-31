@@ -14,6 +14,9 @@ Now, let's set up a conda environment to play in:
 conda create --name diffex
 conda activate diffex
 conda install -c r r=3.6.0
+conda install -c conda-forge lapack=3.6.1
+conda install -c r r-matrix=1.2_17
+conda install -c r r-stringi=1.4.3
 conda install -c r bioconductor-deseq2=1.24.0
 conda install -c r bioconductor-pasilla=1.12.0
 ```
